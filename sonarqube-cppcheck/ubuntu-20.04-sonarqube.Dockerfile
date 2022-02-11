@@ -12,6 +12,7 @@ ARG USERNAME=camiyu1
 # User Add
 RUN useradd -m -s /bin/bash ${USERNAME}
 RUN usermod -aG sudo ${USERNAME}
+RUN echo ${USERNAME}:password | chpasswd
 
 # Install necessary packages
 RUN apt-get update
@@ -49,8 +50,9 @@ RUN cd /workspace && \
     rm sonarqube.zip scanner.zip
 
 RUN chown -R camiyu1 /workspace/
+RUN mkdir /Workspace/ && chown camiyu1 /Workspace/
 
-WORKDIR /workspace/
+WORKDIR /Workspace/
 
 ENV PATH=${PATH}:/workspace/sonarqube-${SONAR_VER}/bin/linux-x86-64:/workspace/sonar-scanner-${SCANNER_VER}-linux/bin
 
