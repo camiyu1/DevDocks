@@ -20,6 +20,7 @@ RUN apt-get install -y sudo \
     unzip \
     git \
     wget \
+    vim \
     default-jre
 
 # Install SonarQube, SonarScanner, CppCheck, Gcovr

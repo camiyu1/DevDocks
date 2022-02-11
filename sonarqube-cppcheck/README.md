@@ -39,7 +39,12 @@ Connect to http://localhost:9000, and change the initial credential for SonarQub
 
 **[Basic Setting (SonarQube)]**
 
-First you have to create project in SonarQube web server (http://localhost:9000). You will receive project token that will be used later.
+First, you have to create a new project on a SonarQube web server (http://localhost:9000). 
+You will receive a project token that will be used later.
+
+And you need to create quality profiles. (You can just import using *Restore* menu with a file `cxx_quality_profile_all_enable.xml`)
+
+A Quality profile related a project have to be changed, because build-in `Sonarway` for C++ does not work in the community edition.
 
 **[Basic Setting (Container)]**
 
